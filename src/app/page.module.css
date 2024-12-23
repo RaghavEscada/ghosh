@@ -1,0 +1,113 @@
+/* Ensure that the container fills the full height of the viewport */
+.container {
+  height: 100%;  /* Allow it to grow as needed */
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;  /* Allow vertical scrolling if content exceeds */
+  position: relative; /* Make sure child elements are positioned relative to this container */
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;  /* Hero section should take full viewport height */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;  /* Prevent scrolling on the hero image */
+}
+
+/* Image container for cover image */
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensure the image covers the entire container without distortion */
+}
+
+/* Overlay text at the bottom */
+.textOverlay {
+  position: absolute;
+  bottom: 20px;  /* Place the text 20px from the bottom */
+  left: 50%;     /* Center the text horizontally */
+  transform: translateX(-50%);  /* Offset the left positioning to truly center the text */
+  text-align: center;  /* Center text inside the overlay */
+  color: white;  /* White text color for contrast */
+  font-family: Arial, sans-serif;  /* Customize font as needed */
+  z-index: 1;  /* Make sure text is on top of the image */
+}
+
+/* Style the large headline */
+.textOverlay h1 {
+  font-size: 2rem;  /* Make the headline large */
+  margin: 0;  /* Remove default margin */
+  font-weight: bold;  /* Make the text bold */
+  color: rgb(199, 205, 32);
+}
+
+/* Style the paragraph below the headline */
+.textOverlay p {
+  font-size: 1.5rem;  /* Customize the size of the paragraph */
+  margin-top: 10px;
+  font-weight: lighter;  /* Optional: make the paragraph text lighter */
+}
+
+/* Image Gallery Section */
+.imageGallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+  gap: 20px;  /* Space between images */
+  padding: 20px;
+  margin-top: 20px;  /* Ensure some space between sections */
+}
+
+/* Each column */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;  /* Space between images inside each column */
+}
+
+/* Ensure images inside the grid are responsive */
+.column img {
+  width: 100%;  /* Make the images take up full width of their container */
+  height: auto;  /* Maintain aspect ratio */
+  object-fit: cover;  /* Ensure images cover their container */
+}
+
+.button {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 5rem; /* Bigger for a royal feel */
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px; /* Smooth, rounded corners for elegance */
+  padding: 30px 100px; /* Larger padding for grandeur */
+  margin: 20px;
+  color: white;
+  background: linear-gradient(135deg, chocolate, darkgoldenrod);
+  border: 4px solid gold;
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px gold; /* Elegant glow effect */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, darkgoldenrod, goldenrod);
+  color: white;
+  border-color: darkorange;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px gold;
+  transform: scale(1.1); /* Dramatic hover effect */
+}
+
+.button:active {
+  background: linear-gradient(135deg, goldenrod, chocolate);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px darkgoldenrod;
+  transform: scale(1.05); /* Subtle press-down effect */
+}
